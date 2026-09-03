@@ -1,0 +1,3 @@
+MASSFORGE Stable Android clean build trigger.
+Native storage: enabled.
+Exercise-specific visuals: enabled.
