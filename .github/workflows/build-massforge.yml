@@ -18,11 +18,18 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - name: Restore persistent debug signing key
+        uses: actions/cache@v4
+        with:
+          path: ~/.android/debug.keystore
+          key: massforge-debug-keystore-v1
+
       - name: Check JavaScript syntax
         run: |
           node --check app/src/main/assets/data.js
           node --check app/src/main/assets/goal.js
           node --check app/src/main/assets/app.js
+          node --check app/src/main/assets/meal-picker.js
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
